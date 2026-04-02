@@ -24,6 +24,14 @@ import {
   Smartphone
 } from 'lucide-react';
 
+// --- Assets Import (هنا السر عشان الصور تشتغل في البرودكشن) ---
+import myResume from './Public/CV/Resume.pdf';
+import profileImg from './Public/Img/5859350778307349686.jpg';
+import dvldImg from './Public/Img/DVLDP.png';
+import cgImg from './Public/Img/CG.png';
+import notesImg from './Public/Img/notes1.jpg';
+import winImg from './Public/Img/WIN.png';
+
 // --- Types ---
 interface Project {
   id: number;
@@ -79,8 +87,9 @@ const Navbar = () => {
           ))}
         </div>
         <motion.a
-          href="../src/Public/Resume.pdf"
+          href={myResume} 
           target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm hover:bg-white/20 transition-all"
@@ -185,7 +194,6 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           src={project.image} 
           alt={project.title} 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-          referrerPolicy="no-referrer"
         />
       </div>
       <div className="p-6">
@@ -201,6 +209,8 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         <div className="flex gap-4">
           <motion.a
             href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-xl font-semibold text-sm"
@@ -254,7 +264,7 @@ export default function App() {
       title: "DVLD — Driver & Vehicle License System",
       description: "WinForms 3-tier system managing driver and vehicle license operations. Handled authentication, issuance, and reservations for over 1000 licenses per month.",
       tech: ["C#", "SQL Server", "ADO.NET", "WinForms"],
-      image: "../src/Img/DVLDP.png",
+      image: dvldImg,
       github: "https://github.com/osamateama/DVLD-Management-System"
     },
     {
@@ -262,7 +272,7 @@ export default function App() {
       title: "CRUD Code Generator",
       description: "Automatically generates Business Layer, Data Access Layer, and SQL scripts. Reduced development time by 60% for developers.",
       tech: ["C#", "SQL Server", "Layered Architecture"],
-      image: "../src/Img/CG.png",
+      image: cgImg,
       github: "https://github.com/osamateama/Code-Generator"
     },
     {
@@ -270,7 +280,7 @@ export default function App() {
       title: "Notes API (.NET 8)",
       description: "A secure RESTful API for managing personal notes with JWT Authentication and Refresh Tokens.",
       tech: ["REST Api","ASP.NET Web Api" ,"C#", "EF Core","JWT"],
-      image: "../src/Img/notes1.jpg",
+      image: notesImg,
       github: "https://github.com/osamateama/notes-Api"
     },
     {
@@ -278,7 +288,7 @@ export default function App() {
       title: "Folder Monitor Service",
       description: "Windows Service that monitors folders in real-time. Automated renaming and logging for over 10,000 files during testing.",
       tech: ["C#", "Windows Service", "File System Watcher"],
-      image: "../src/Img/WIN.png",
+      image: winImg,
       github: "https://github.com/osamateama/FolderMonitorService"
     }
   ];
@@ -345,13 +355,11 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-3xl rotate-6 blur-2xl opacity-20 animate-pulse" />
               <div className="relative rounded-3xl overflow-hidden border border-white/10 backdrop-blur-md bg-white/5 p-4">
                 <img 
-                  src="../src/Img/5859350778307349686.jpg" 
+                  src={profileImg} 
                   alt="Osama Reda" 
                   className="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-700"
-                  referrerPolicy="no-referrer"
                 />
               </div>
-              {/* Floating Badges */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 3 }}
@@ -541,6 +549,7 @@ export default function App() {
                 <motion.a
                   href="https://github.com/osamateama"
                   target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -5, scale: 1.1 }}
                   className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/30 transition-all"
                 >
@@ -549,6 +558,7 @@ export default function App() {
                 <motion.a
                   href="https://www.linkedin.com/in/osama-reda-4919752a3/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -5, scale: 1.1 }}
                   className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/30 transition-all"
                 >

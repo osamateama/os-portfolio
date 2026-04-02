@@ -24,7 +24,6 @@ import {
   Smartphone
 } from 'lucide-react';
 
-// --- Assets Import (هنا السر عشان الصور تشتغل في البرودكشن) ---
 import myResume from './Public/CV/Resume.pdf';
 import profileImg from './Public/Img/5859350778307349686.jpg';
 import dvldImg from './Public/Img/DVLDP.png';
